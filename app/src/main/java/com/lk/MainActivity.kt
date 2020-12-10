@@ -7,8 +7,7 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    val a=0
-    var intent:Intent?=null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -16,13 +15,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun jumpInfoCLick(view: View) {
+        var intent = Intent(this,SubjectInfo::class.java)
         when(view.id){
             nineteen.id-> {
-
                 intent.putExtra("num",19)
-                startActivity(intent)
+
             }
-            twenty.id -> print("20")
+            twenty.id -> {
+                var intent = Intent()
+                intent.putExtra("num",19)
+
+            }
+            }
+        startActivity(intent)
         }
     }
 }
